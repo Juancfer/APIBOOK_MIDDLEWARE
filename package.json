@@ -1,0 +1,30 @@
+{
+  "name": "api-libros-cors",
+  "version": "1.0.0",
+  "description": "API Libros en Mongoo",
+  "main": "index.js",
+  "scripts": {
+    "start:watch": "node --watch index.js",
+    "start": "node index.js",
+    "seed:book": "node ./seeds/book.seed.js",
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "author": "Juan Carlos Fernandez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.0"
+  }
+}

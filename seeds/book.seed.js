@@ -5,28 +5,67 @@ const { Book } = require("../models/Book.js");
 const bookList = [
   {
     title: "Harry Potter",
-    author: "J.K. Rowling",
+    author: {
+      name: "J.K. Rowling",
+      country: "SPAIN"
+    },
     pages: 543,
   },
   {
     title: "1984",
-    author: "George Orwell",
+    author: {
+      name: "George Orwell",
+      country: "GERMANY"
+    },
     pages: 328,
   },
   {
     title: "To Kill a Mockingbird",
-    author: "Harper Lee",
+    author: {
+      name: "Harper Lee",
+      country: "USA"
+    },
     pages: 281,
   },
   {
     title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
+    author: {
+      name: "F. Scott Fitzgerald",
+      country: "USA"
+    },
     pages: 180,
   },
   {
     title: "Pride and Prejudice",
-    author: "Jane Austen",
+    author: {
+      name: "Jane Austen",
+      country: "FRANCE"
+    },
     pages: 279,
+  },
+  {
+    title: "100 AÑOS DE SOLEDAD",
+    author: {
+      name: "Gabriel G. Marquez",
+      country: "COLOMBIA"
+    },
+    pages: 350,
+  },
+  {
+    title: "DOÑA BARBARA",
+    author: {
+      name: "Romulo Gallegos",
+      country: "VENEZUELA"
+    },
+    pages: 320,
+  },
+  {
+    title: "LANZAS COLORADAS",
+    author: {
+      name: "Arturo Uslar Pietri",
+      country: "VENEZUELA"
+    },
+    pages: 320,
   },
 ];
 

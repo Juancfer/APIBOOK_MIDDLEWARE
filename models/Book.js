@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const allowedCountries = ["SPAIN", "ITALY", "USA", "GERMANY", "JAPAN", "FRANCE"];
+const allowedCountries = ["SPAIN", "ITALY", "USA", "GERMANY", "JAPAN", "FRANCE", "COLOMBIA", "VENEZUELA"];
 
 const bookSchema = new Schema(
   {
@@ -9,7 +9,7 @@ const bookSchema = new Schema(
       type: String,
       required: true,
       minLength: [3, "Debe ingresar al menos 3 letras para el titulo"],
-      maxLength: 20,
+      maxLength: 40,
       trim: true,
     },
     author: {
@@ -27,6 +27,10 @@ const bookSchema = new Schema(
           enum: allowedCountries,
           uppercase: true,
           trim: true,
+        },
+        profileImage: {
+          type: String,
+          required: false,
         }
       },
       required: true,

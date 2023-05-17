@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "917902e5-3b32-4a74-bf6c-ea613449d97d",
+		"name": "API-BOOKS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27142612",
+		"_collection_link": "https://solar-shadow-292261.postman.co/workspace/Team-Workspace~a177c5f4-a623-49dd-8efe-2f6293986675/collection/27142612-917902e5-3b32-4a74-bf6c-ea613449d97d?action=share&creator=27142612&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/644a6aad4e94a6a27729ab42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"644a6aad4e94a6a27729ab42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Book by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/title/To Kill a Mockingbird",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"title",
+								"To Kill a Mockingbird"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Books",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"E\",\r\n    \"author\": {\r\n        \"name\": \"Prueba de error\",\r\n        \"country\": \"España\"\r\n    },\r\n    \"pages\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/644a6aad4e94a6a27729ab43",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"644a6aad4e94a6a27729ab43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": {\r\n        \"name\": \"J. K. Rowling\"\r\n    },\r\n    \"pages\": 125\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/6464b47bb3e287f8c17f7947",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"6464b47bb3e287f8c17f7947"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File Uploads",
+			"item": [
+				{
+					"name": "File Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/JuanCarlosFernandez/Downloads/FBTVMAX.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/file-upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"file-upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/JuanCarlosFernandez/Downloads/14032023 FutPlay Deportes.PNG"
+								},
+								{
+									"key": "bookId",
+									"value": "6464b47bb3e287f8c17f794b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/book/image-upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"image-upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
